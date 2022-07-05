@@ -1,0 +1,14 @@
+FROM ghcr.io/graalvm/graalvm-ce:ol7-java11-22.1.0 AS builder
+
+ADD . /spring-native-demo
+WORKDIR /spring-native-demo
+
+RUN gu install native-image
+
+RUN ./mvnw clean package -Pnative --no-transfer-progress
+
+FROM oraclelinux:7-slim
+
+COPY --from=builder "spring-native-demo/target/spring-native-demo" spring-native-demo
+
+CMD [ "sh", "-c", "./spring-native-demo"]
