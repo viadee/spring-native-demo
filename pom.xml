@@ -14,7 +14,7 @@
 	<name>spring-native-demo</name>
 	<description>Demo project for spring native</description>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>25</java.version>
 		<spring.native.version>0.12.0</spring.native.version>
 		<graalvm.plugin.version>0.11.1</graalvm.plugin.version>
 	</properties>
@@ -42,7 +42,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<image>
-						<builder>paketobuildpacks/builder:tiny</builder>
+						<builder>paketobuildpacks/builder-jammy-base</builder>
 						<env>
 							<BP_NATIVE_IMAGE>true</BP_NATIVE_IMAGE>
 						</env>
@@ -77,7 +77,7 @@
 							<execution>
 								<id>build-native</id>
 								<goals>
-									<goal>build</goal>
+									<goal>compile-no-fork</goal>
 								</goals>
 								<phase>package</phase>
 							</execution>

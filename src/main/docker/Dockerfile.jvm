@@ -1,4 +1,4 @@
-FROM openjdk:11.0.11-slim
+FROM openjdk:25-rc-oracle
 ARG JAR_FILE=target/spring-native-demo-0.0.1-SNAPSHOT.jar
 COPY ${JAR_FILE} spring-native-demo.jar
 ENTRYPOINT ["java","-jar","/spring-native-demo.jar"]
