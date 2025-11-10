@@ -15,8 +15,6 @@
 	<description>Demo project for spring native</description>
 	<properties>
 		<java.version>25</java.version>
-		<spring.native.version>0.12.0</spring.native.version>
-		<graalvm.plugin.version>0.11.1</graalvm.plugin.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -27,7 +25,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -71,7 +68,6 @@
 					<plugin>
 						<groupId>org.graalvm.buildtools</groupId>
 						<artifactId>native-maven-plugin</artifactId>
-						<version>${graalvm.plugin.version}</version>
 						<extensions>true</extensions>
 						<executions>
 							<execution>
