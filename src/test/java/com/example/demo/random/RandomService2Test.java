@@ -13,7 +13,7 @@ public class RandomService2Test {
     private RandomCallService2 randomCallService2;
 
     @Test
-    void call_shouldReturnZahl() {
+    void call_shouldReturnKopf() {
         String result = randomCallService2.call();
         assertThat(result).isEqualTo("Kopf");
     }
