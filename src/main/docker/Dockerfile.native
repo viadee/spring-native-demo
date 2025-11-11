@@ -3,7 +3,7 @@ FROM ghcr.io/graalvm/native-image-community:25 AS builder
 ADD . /spring-native-demo
 WORKDIR /spring-native-demo
 
-RUN microdnf install -y maven && microdnf clean all
+# RUN microdnf install -y maven && microdnf clean all
 
 RUN ./mvnw clean package -Pnative --no-transfer-progress
 
