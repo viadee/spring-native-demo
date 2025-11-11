@@ -1,6 +1,6 @@
 # Spring Native Demo
 
-Erreichbar unter http://localhost:8080/greeting
+Erreichbar unter http://localhost:8080/greeting und http://localhost:8080/random
 
 ## Standard
 
