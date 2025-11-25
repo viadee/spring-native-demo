@@ -1,6 +1,7 @@
 # Spring Native Demo
 
-Erreichbar unter http://localhost:8080/greeting und http://localhost:8080/random
+Erreichbar unter http://localhost:8080/greeting und http://localhost:8080/random.
+Die einfachste Möglichkeit stellt eine Ausführung im GitHub Codespace dar. Dazu können jeweils die ersten Instruktionen in den Abschnitten "Standard" und "Nativ" direkt in einem Codespace ausgeführt werden. Ein solcher Codespace lässt sich über den grünen "Code" Button erstellen. Als machine type sollte mindestens "4-core" ausgewählt werden. 
 
 ## Standard
 

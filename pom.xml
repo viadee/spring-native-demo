@@ -37,6 +37,14 @@
 		</dependency>
 	</dependencies>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
 	<profiles>
 		<profile>
@@ -46,7 +54,7 @@
 					<plugin>
 						<groupId>org.springframework.boot</groupId>
 						<artifactId>spring-boot-maven-plugin</artifactId>
-						<configuration>
+						<configuration> <!-- Erforderlich für einen Build mit Paketo -->
 							<image>
 								<builder>paketobuildpacks/builder-jammy-tiny</builder>
 								<env>
@@ -55,7 +63,7 @@
 							</image>
 						</configuration>
 					</plugin>
-					<plugin>
+					<plugin> <!-- Erforderlich für native Kompilierung -->
 						<groupId>org.graalvm.buildtools</groupId>
 						<artifactId>native-maven-plugin</artifactId>
 						<extensions>true</extensions>
