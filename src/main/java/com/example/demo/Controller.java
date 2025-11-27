@@ -20,6 +20,11 @@ public class Controller {
         this.greetingService = greetingService;
     }
 
+    @GetMapping("/")
+    public String redirectToGreeting() {
+        return "redirect:/greeting";
+    }
+
     @GetMapping("/greeting")
     public Greeting getGreeting(@RequestParam(value = "name", defaultValue = "World")  String name) {
         return greetingService.greeting(name);
