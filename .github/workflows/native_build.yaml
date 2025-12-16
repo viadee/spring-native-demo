@@ -1,0 +1,38 @@
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+
+name: Java CI Native Build with Maven
+
+on:
+  push:
+    branches: [update-demo]
+  pull_request:
+    branches: [update-demo]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up JDK 25
+        uses: actions/setup-java@v5
+        with:
+          java-version: "25"
+          distribution: "graalvm" # See 'Supported distributions' for available options
+          cache: 'maven'
+
+      - name: Maven native test
+        run: ./mvnw clean test -PnativeTest # does it work without profile configuration?
+
+      - name: Maven native build
+        run: ./mvnw clean package -Pnative native:compile
+
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-build
+          path: target/spring-native-demo
+          retention-days: 5

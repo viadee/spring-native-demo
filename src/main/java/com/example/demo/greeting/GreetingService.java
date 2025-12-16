@@ -1,10 +1,10 @@
 package com.example.demo.greeting;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-@Component
+@Service
 public class GreetingService {
 
     private static final String TEMPLATE = "Hello, %s!";
