@@ -5,9 +5,9 @@ name: Java CI Native Build with Maven
 
 on:
   push:
-    branches: [update-demo]
+    branches: [master]
   pull_request:
-    branches: [update-demo]
+    branches: [master]
 
 jobs:
   build:
@@ -25,7 +25,7 @@ jobs:
           cache: 'maven'
 
       - name: Maven native test
-        run: ./mvnw clean test -PnativeTest # does it work without profile configuration?
+        run: ./mvnw clean test -PnativeTest
 
       - name: Maven native build
         run: ./mvnw clean package -Pnative native:compile
